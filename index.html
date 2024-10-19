@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Commands Reference</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Sidebar for Command Groups -->
+        <aside class="left-menu">
+            <h2>Command Groups</h2>
+            <ul id="commandMenu">
+                <!-- Command Groups will be dynamically loaded here -->
+            </ul>
+        </aside>
+
+        <!-- Main Content Area for Commands -->
+        <main>
+            <div id="commandsContent">
+                <!-- Command Cards will be dynamically loaded here -->
+            </div>
+        </main>
+
+        <!-- Right Sidebar for Utilities -->
+        <aside class="right-menu">
+            <div class="icons">
+                <span class="material-symbols-outlined icon" id="calcIcon" data-content="calcContent">calculate</span>
+                <span class="material-symbols-outlined icon" id="codeIcon" data-content="codeContent">looks_one</span>
+                <span class="material-symbols-outlined icon" id="noteIcon" data-content="noteContent">edit_note</span>
+            </div>
+            <div class="content" id="calcContent">
+                <input type="text" id="ipAddress" placeholder="IP Address">
+                <input type="number" id="oldPrefix" placeholder="Old Prefix (e.g., 24)" min="0">
+                <input type="number" id="newPrefix" placeholder="New Prefix (e.g., 26)" min="0">
+                <button onclick="calculateSubnet()">Calculate</button>
+                <div id="subnetResults"></div>
+            </div>
+            <div class="content" id="codeContent">
+                <table id="subnetTable" class="subnet-table">
+                    <!-- Table will be loaded dynamically -->
+
+                </table>
+            </div>
+            <div class="content" id="noteContent">
+                <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

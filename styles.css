@@ -1,0 +1,242 @@
+/* Container and Layout */
+.container {
+    display: flex;
+    min-height: 100vh; /* Ensure the minimum height is full viewport height */
+    background-color: #f5f5f5;
+    overflow: auto; /* Allow the container to scroll if needed */
+    padding-right: 5%; /* Adjust for right menu width and reduce the gap */
+}
+
+/* Left Sidebar Styling */
+.left-menu {
+    flex: 0 0 15%;
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    position: fixed;
+}
+
+.left-menu h2 {
+    margin-top: 0;
+}
+
+.left-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-menu li {
+    margin: 10px 0;
+}
+
+.left-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.left-menu a:hover {
+    background-color: #1b5e20;
+}
+
+/* Main Content Styling */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    margin-right: 18%; /* Adjust for right menu width and reduce the gap */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    margin-left: 17.5%;
+}
+
+.card {
+    background-color: #263238;
+    color: #eceff1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.code {
+    background-color: #000;
+    padding: 10px;
+    border-radius: 4px;
+    color: #00ff00;
+    font-family: monospace;
+}
+
+/* Right Sidebar Styling */
+.right-menu {
+    width: 20%; /* Set to 20% of the page width */
+    background-color: #424242;
+    color: white;
+    padding: 20px;
+    position: fixed; /* Fixed position on the screen */
+    top: 0;
+    right: 0;
+    height: 100vh; /* Ensure it takes the full viewport height */
+    overflow-y: auto; /* Enable scrolling within the menu if needed */
+}
+
+.right-menu-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 36px;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.content {
+    display: none;
+    padding: 15px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Show content when active */
+.content.active {
+    display: block;
+}
+
+#notesArea {
+    width: 100%;
+    height: 300px; /* Give it a fixed height */
+    background: transparent; /* Make the background transparent */
+    border: none; /* Remove border */
+    color: white; /* Ensure text color is visible */
+    resize: none; /* Prevent resizing */
+    padding: 10px; /* Add padding for better UX */
+    box-sizing: border-box; /* Include padding in width/height */
+    outline: none; /* Remove focus outline */
+}
+
+/* Utility Elements Styling */
+input, textarea, button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+button {
+    background-color: #2e7d32;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b5e20;
+}
+
+/* Submenu styling */
+.submenu {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    font-size: 14px;
+    color: #c8e6c9;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.submenu a:hover {
+    background-color: #388e3c;
+}
+
+/* Apply the Roboto font */
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: auto; /* Allow body to scroll if necessary */
+}
+
+/* Additional styling for headers and text */
+.left-menu h2,
+.main h2,
+.card h3,
+button {
+    font-weight: 500;
+}
+
+.left-menu a,
+.submenu a,
+.card p,
+pre.code {
+    font-weight: 400;
+}
+
+/* Reset default margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f5f5f5; /* Optional: set a background color for the entire page */
+}
+
+/* Subnet Table Styling */
+.subnet-table {
+    width: 90%; /* Set a specific width for the table */
+    max-width: 300px; /* Maximum width to fit into the right menu */
+    border-collapse: collapse;
+    margin: 10px auto; /* Center the table within the menu */
+}
+
+.subnet-table th, .subnet-table td {
+    border: 1px solid #ddd; /* Light gray borders */
+    padding: 4px; /* Reduce padding for smaller size */
+    text-align: center;
+    font-size: 14px; /* Decrease font size */
+}
+
+.subnet-table th {
+    background-color: #4CAF50; /* Green background for headers */
+    color: white; /* White text color for headers */
+    font-weight: 500; /* Bold text for headers */
+}
+
+#subnetResults {
+    color: white; /* Assuming a dark theme; change if necessary */
+    padding: 10px;
+     /* Semi-transparent background */
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.subnet-details {
+    font-size: 12px;
+    margin-left: 20px; /* Moves the details to the right */
+    color: #ddd; /* Make a bit lighter, optional */
+}
